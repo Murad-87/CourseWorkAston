@@ -11,5 +11,14 @@
         android:src="@drawable/ic_splash_screen"
         android:layout_centerInParent="true"
         android:id="@+id/im_splash_screen"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aston"
+        android:textSize="50sp"
+        android:textColor="#805041"
+        android:textStyle="italic"
+        android:layout_below="@id/im_splash_screen"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

@@ -5,4 +5,7 @@ import com.example.mycourseworkaston.utils.BaseFragment
 
 class CharactersFragment :
     BaseFragment<FragmentCharactersBinding>(FragmentCharactersBinding::inflate) {
+
+
+
 }
