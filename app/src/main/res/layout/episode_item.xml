@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+
+    <TextView
+        android:id="@+id/episode_static_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:text="Name:"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/episode_static_episode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/episode_static_name"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:text="Episode:"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/episode_static_air_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/episode_static_episode"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:text="Air_date:"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/item_episode_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@id/episode_static_name"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        tools:text="The Ricklantis Mixup" />
+
+    <TextView
+        android:id="@+id/episode_item_episode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/episode_static_name"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@id/episode_static_episode"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        tools:text="S03E07" />
+
+    <TextView
+        android:id="@+id/item_episode_air_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/episode_static_episode"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@id/episode_static_air_date"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        tools:text="September 10, 2017" />
+
+</RelativeLayout>

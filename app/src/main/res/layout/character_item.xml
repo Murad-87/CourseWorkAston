@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+
+    <TextView
+        android:id="@+id/character_static_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:text="Name:"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/character_static_species"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/character_static_name"
+        android:layout_marginStart="8dp"
+        android:text="Species:"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/character_static_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/character_static_species"
+        android:layout_marginStart="8dp"
+        android:text="Status:"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/character_static_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/character_static_status"
+        android:layout_marginStart="8dp"
+        android:text="Gender:"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/character_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@id/character_static_name"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        tools:text="Петр" />
+
+    <TextView
+        android:id="@+id/character_species"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/character_name"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@id/character_static_species"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        tools:text="Человек" />
+
+    <TextView
+        android:id="@+id/character_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/character_species"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@id/character_static_status"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        tools:text="Живой" />
+
+    <TextView
+        android:id="@+id/character_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/character_status"
+        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@id/character_static_gender"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        tools:text="Муж" />
+
+    <ImageView
+        android:id="@+id/character_item_image"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_below="@id/character_gender"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="10dp"
+        tools:src="@drawable/ic_circle_24" />
+
+</RelativeLayout>
