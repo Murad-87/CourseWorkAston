@@ -46,7 +46,7 @@
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/character_name"
+        android:id="@+id/character_item_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -57,10 +57,10 @@
         tools:text="Петр" />
 
     <TextView
-        android:id="@+id/character_species"
+        android:id="@+id/character_item_species"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/character_name"
+        android:layout_below="@id/character_item_name"
         android:layout_marginStart="20dp"
         android:layout_toEndOf="@id/character_static_species"
         android:textColor="@color/black"
@@ -68,10 +68,10 @@
         tools:text="Человек" />
 
     <TextView
-        android:id="@+id/character_status"
+        android:id="@+id/character_item_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/character_species"
+        android:layout_below="@id/character_item_species"
         android:layout_marginStart="20dp"
         android:layout_toEndOf="@id/character_static_status"
         android:textColor="@color/black"
@@ -79,10 +79,10 @@
         tools:text="Живой" />
 
     <TextView
-        android:id="@+id/character_gender"
+        android:id="@+id/character_item_gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/character_status"
+        android:layout_below="@id/character_item_status"
         android:layout_marginStart="20dp"
         android:layout_toEndOf="@id/character_static_gender"
         android:textColor="@color/black"
@@ -93,7 +93,7 @@
         android:id="@+id/character_item_image"
         android:layout_width="130dp"
         android:layout_height="130dp"
-        android:layout_below="@id/character_gender"
+        android:layout_below="@id/character_item_gender"
         android:layout_marginStart="70dp"
         android:layout_marginTop="10dp"
         tools:src="@drawable/ic_circle_24" />
