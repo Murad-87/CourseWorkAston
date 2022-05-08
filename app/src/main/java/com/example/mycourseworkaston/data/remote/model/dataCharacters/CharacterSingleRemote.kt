@@ -1,12 +1,14 @@
 package com.example.mycourseworkaston.data.remote.model.dataCharacters
 
 import android.os.Parcelable
+import androidx.annotation.Keep
 import kotlinx.android.parcel.Parcelize
 
+@Keep
 @Parcelize
 data class CharacterSingleRemote(
     val created: String,
-    val episode: List<Any>,
+    val episode: List<String>,
     val gender: String,
     val id: Int,
     val image: String,
