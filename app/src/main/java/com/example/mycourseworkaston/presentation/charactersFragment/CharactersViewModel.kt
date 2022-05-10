@@ -5,16 +5,18 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.mycourseworkaston.data.remote.model.dataCharacters.CharacterRemoteList
 import com.example.mycourseworkaston.data.repository.RickAndMortyRepository
+import com.example.mycourseworkaston.domain.CharacterUseCase
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class CharactersViewModel: ViewModel() {
+class CharactersViewModel @Inject constructor(private val characterUseCase: CharacterUseCase) :
+    ViewModel() {
 
-    var repository = RickAndMortyRepository()
     private val characterList: MutableLiveData<CharacterRemoteList> = MutableLiveData()
 
-    fun getCharacterAll (){
+    fun getCharacterAll() {
         viewModelScope.launch {
-            characterList.value = repository.getCharacter()
+            characterList.value = characterUseCase.get()
         }
     }
 

@@ -1,10 +1,9 @@
 package com.example.mycourseworkaston.data.remote.model.dataEpisodes
 
 import android.os.Parcelable
-import androidx.annotation.Keep
 import kotlinx.android.parcel.Parcelize
 
-@Keep
+
 @Parcelize
 data class EpisodeSingleRemote(
     val air_date: String,

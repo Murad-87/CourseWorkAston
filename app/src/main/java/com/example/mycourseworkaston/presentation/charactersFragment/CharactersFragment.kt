@@ -4,18 +4,24 @@ import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.mycourseworkaston.data.remote.model.dataCharacters.CharacterSingleRemote
 import com.example.mycourseworkaston.databinding.FragmentCharactersBinding
+import com.example.mycourseworkaston.di.presentation.module.ViewModelFactory
 import com.example.mycourseworkaston.presentation.charactersFragment.charactersAdapter.CharactersAdapter
 import com.example.mycourseworkaston.presentation.charactersFragment.charactersAdapter.ItemClickCharacter
 import com.example.mycourseworkaston.utils.BaseFragment
+import javax.inject.Inject
 
 class CharactersFragment :
     BaseFragment<FragmentCharactersBinding>(FragmentCharactersBinding::inflate),
     ItemClickCharacter {
 
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
     private val adapter: CharactersAdapter by lazy { CharactersAdapter(this) }
     private val characterList: List<CharacterSingleRemote> = arrayListOf()
-    private val viewModel = ViewModelProvider(this).get(CharactersViewModel::class.java)
+
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -28,7 +34,6 @@ class CharactersFragment :
             adapter.submitList(characterList)
             characterFragmentRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
             characterFragmentRecyclerView.adapter = adapter
-            viewModel.getCharacterAll()
         }
     }
 
@@ -36,5 +41,11 @@ class CharactersFragment :
         TODO("Not yet implemented")
     }
 
+    companion object {
+
+        private const val CHARACTER_DATA = "CHARACTER_DATA"
+
+
+    }
 
 }
