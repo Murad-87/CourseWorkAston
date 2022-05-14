@@ -1,9 +1,9 @@
 package com.example.mycourseworkaston.presentation.locationsFragment
 
 import androidx.lifecycle.ViewModel
-import com.example.mycourseworkaston.domain.LocationUseCase
+import com.example.mycourseworkaston.domain.useCase.LocationListUseCase
 import javax.inject.Inject
 
-class LocationsViewModel @Inject constructor(private val locationUseCase: LocationUseCase) :
+class LocationsViewModel @Inject constructor(private val locationUseCase: LocationListUseCase) :
     ViewModel() {
 }

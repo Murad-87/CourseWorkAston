@@ -1,4 +1,7 @@
 package com.example.mycourseworkaston.presentation.episodeDetailsFragment
 
-class EpisodeDetailsViewModel {
+import androidx.lifecycle.ViewModel
+import javax.inject.Inject
+
+class EpisodeDetailsViewModel @Inject constructor(): ViewModel() {
 }

@@ -5,15 +5,8 @@ import com.example.mycourseworkaston.data.remote.model.dataEpisodes.EpisodeRemot
 import com.example.mycourseworkaston.data.remote.model.dataLocations.LocationsRemoteList
 import retrofit2.http.GET
 
-interface APIService {
+interface ApiServiceCharacter {
 
     @GET("/character")
     suspend fun getCharacter() : CharacterRemoteList
-
-    @GET("/episode")
-    suspend fun getEpisodes() : EpisodeRemoteList
-
-    @GET("/location")
-    suspend fun getLocations(): LocationsRemoteList
-
 }
