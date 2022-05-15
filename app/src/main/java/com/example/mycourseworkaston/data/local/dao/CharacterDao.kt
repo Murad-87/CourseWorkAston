@@ -10,23 +10,12 @@ import com.example.mycourseworkaston.data.local.model.LocationLocalEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface RickAndMortyDao {
+interface CharacterDao {
 
     @Query("SELECT * FROM character_table")
     fun flowCharacter(): Flow<List<CharacterLocalEntity>>
 
-    @Query("SELECT * FROM episode_table")
-    fun flowEpisode(): Flow<List<EpisodeLocalEntity>>
-
-    @Query("SELECT * FROM location_table")
-    fun flowLocation(): Flow<List<LocationLocalEntity>>
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCharacter(character: CharacterLocalEntity)
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertEpisode(episode: EpisodeLocalEntity)
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertLocation(location: LocationLocalEntity)
 }

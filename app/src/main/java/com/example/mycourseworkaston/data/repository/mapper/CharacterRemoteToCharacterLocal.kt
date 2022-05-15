@@ -2,8 +2,9 @@ package com.example.mycourseworkaston.data.repository.mapper
 
 import com.example.mycourseworkaston.data.local.model.CharacterLocalEntity
 import com.example.mycourseworkaston.data.remote.model.dataCharacters.CharacterSingleRemote
+import javax.inject.Inject
 
-class CharacterRemoteToCharacterLocal {
+class CharacterRemoteToCharacterLocal @Inject constructor() {
     fun mapCharacter(remoteCharacter: CharacterSingleRemote): CharacterLocalEntity {
         with(remoteCharacter) {
             return CharacterLocalEntity(

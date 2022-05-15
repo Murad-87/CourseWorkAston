@@ -11,23 +11,23 @@ import dagger.BindsInstance
 import dagger.Component
 
 @ApplicationScope
-@Component(modules = [ViewModelModule::class, RemoteModule::class])
+@Component(modules = [ViewModelModule::class, RemoteModule::class, DataModule::class])
 interface ApplicationComponent {
 
-  fun inject(characterFragment: CharactersFragment)
+    fun inject(characterFragment: CharactersFragment)
 
-  fun inject(characterDetailsFragment: CharacterDetailsFragment)
+    fun inject(characterDetailsFragment: CharacterDetailsFragment)
 
-  fun inject(episodesFragment: EpisodesFragment)
+    fun inject(episodesFragment: EpisodesFragment)
 
-  fun inject(episodeDetailsFragment: EpisodeDetailsFragment)
+    fun inject(episodeDetailsFragment: EpisodeDetailsFragment)
 
-  fun inject(locationsFragment: LocationsFragment)
+    fun inject(locationsFragment: LocationsFragment)
 
-  fun inject(locationDetailsFragment: LocationDetailsFragment)
+    fun inject(locationDetailsFragment: LocationDetailsFragment)
 
-  @Component.Factory
-  interface ApplicationBuilderFactory
+    @Component.Factory
+    interface ApplicationBuilderFactory
 
     fun create(
         @BindsInstance application: Application

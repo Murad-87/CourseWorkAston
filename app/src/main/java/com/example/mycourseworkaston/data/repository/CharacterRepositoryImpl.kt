@@ -1,24 +1,30 @@
 package com.example.mycourseworkaston.data.repository
 
-import com.example.mycourseworkaston.data.local.dao.RickAndMortyDao
+import com.example.mycourseworkaston.data.local.dao.CharacterDao
 import com.example.mycourseworkaston.data.remote.api.ApiServiceCharacter
 import com.example.mycourseworkaston.data.remote.model.dataCharacters.CharacterSingleRemote
 import com.example.mycourseworkaston.data.repository.mapper.CharacterRemoteToCharacterLocal
-import com.example.mycourseworkaston.data.repository.mapper.EpisodeRemoteToEpisodeLocal
-import com.example.mycourseworkaston.data.repository.mapper.LocationRemoteToLocationLocal
+import com.example.mycourseworkaston.domain.model.CharacterInfoDomainModel
+import com.example.mycourseworkaston.domain.repository.CharacterRepository
+import javax.inject.Inject
 
-class CharacterRepositoryImpl(
+class CharacterRepositoryImpl @Inject constructor(
     private val apiService: ApiServiceCharacter,
-    private val dao: RickAndMortyDao,
+    private val dao: CharacterDao,
     private val mapperCharacter: CharacterRemoteToCharacterLocal,
-    private val mapperEpisode: EpisodeRemoteToEpisodeLocal,
-    private val mapperLocation: LocationRemoteToLocationLocal
-) {
 
+    ) : CharacterRepository {
+
+    override suspend fun getCharacterList(): List<CharacterInfoDomainModel> {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun getCharacterItem(itemId: Int): CharacterInfoDomainModel {
+        TODO("Not yet implemented")
+    }
 
     suspend fun insertCharacter(characterRemote: CharacterSingleRemote){
         characterRemote.let ( mapperCharacter::mapCharacter)
             .let { dao.insertCharacter(it) }
     }
-
 }
