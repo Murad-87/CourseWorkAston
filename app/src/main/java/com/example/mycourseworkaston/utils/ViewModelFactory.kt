@@ -1,7 +1,8 @@
-package com.example.mycourseworkaston.di
+package com.example.mycourseworkaston.utils
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.mycourseworkaston.di.ApplicationScope
 import javax.inject.Inject
 import javax.inject.Provider
 

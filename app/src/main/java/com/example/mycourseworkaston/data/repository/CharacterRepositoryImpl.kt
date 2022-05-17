@@ -9,7 +9,7 @@ import com.example.mycourseworkaston.domain.repository.CharacterRepository
 import javax.inject.Inject
 
 class CharacterRepositoryImpl @Inject constructor(
-    private val apiService: ApiServiceCharacter,
+    private val api: ApiServiceCharacter,
     private val dao: CharacterDao,
     private val mapperCharacter: CharacterRemoteToCharacterLocal,
 
@@ -23,7 +23,7 @@ class CharacterRepositoryImpl @Inject constructor(
         TODO("Not yet implemented")
     }
 
-    suspend fun insertCharacter(characterRemote: CharacterSingleRemote){
+    override suspend fun insertCharacter(characterRemote: CharacterSingleRemote){
         characterRemote.let ( mapperCharacter::mapCharacter)
             .let { dao.insertCharacter(it) }
     }

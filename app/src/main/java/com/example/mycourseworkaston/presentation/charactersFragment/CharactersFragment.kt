@@ -6,7 +6,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.mycourseworkaston.data.remote.model.dataCharacters.CharacterSingleRemote
 import com.example.mycourseworkaston.databinding.FragmentCharactersBinding
-import com.example.mycourseworkaston.di.ViewModelFactory
+import com.example.mycourseworkaston.utils.ViewModelFactory
 import com.example.mycourseworkaston.presentation.charactersFragment.charactersAdapter.CharactersAdapter
 import com.example.mycourseworkaston.presentation.charactersFragment.charactersAdapter.ItemClickCharacter
 import com.example.mycourseworkaston.utils.BaseFragment

@@ -8,6 +8,7 @@ import com.example.mycourseworkaston.presentation.episodeDetailsFragment.Episode
 import com.example.mycourseworkaston.presentation.episodesFragment.EpisodesViewModel
 import com.example.mycourseworkaston.presentation.locationDetailsFragment.LocationDetailsViewModel
 import com.example.mycourseworkaston.presentation.locationsFragment.LocationsViewModel
+import com.example.mycourseworkaston.utils.ViewModelFactory
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap

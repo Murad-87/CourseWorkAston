@@ -14,6 +14,8 @@ import dagger.Component
 @Component(modules = [ViewModelModule::class, RemoteModule::class, DataModule::class])
 interface ApplicationComponent {
 
+    fun applicationContext(): Application
+
     fun inject(characterFragment: CharactersFragment)
 
     fun inject(characterDetailsFragment: CharacterDetailsFragment)
@@ -25,11 +27,12 @@ interface ApplicationComponent {
     fun inject(locationsFragment: LocationsFragment)
 
     fun inject(locationDetailsFragment: LocationDetailsFragment)
-
+    
     @Component.Factory
-    interface ApplicationBuilderFactory
+    interface Factory {
 
-    fun create(
-        @BindsInstance application: Application
-    ): Application
+        fun create(
+            @BindsInstance application: Application
+        ): ApplicationComponent
+    }
 }
