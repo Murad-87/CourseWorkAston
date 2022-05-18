@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 interface LocationDao {
 
     @Query("SELECT * FROM location_table")
-    fun flowLocation(): Flow<List<LocationLocalEntity>>
+    suspend fun getLocationList(): List<LocationLocalEntity>
 
     @Query("SELECT * FROM location_table WHERE id = :locationId LIMIT 1")
     fun flowLocationItem(locationId: Int): Flow<LocationLocalEntity>

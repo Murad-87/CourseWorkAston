@@ -2,7 +2,6 @@ package com.example.mycourseworkaston.presentation.episodesFragment
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
@@ -33,7 +32,6 @@ class EpisodesFragment : BaseFragment<FragmentEpisodesBinding>(FragmentEpisodesB
         super.onAttach(context)
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViewsEpisode()
@@ -54,7 +52,7 @@ class EpisodesFragment : BaseFragment<FragmentEpisodesBinding>(FragmentEpisodesB
     }
 
     private fun initViewsEpisode() {
-        with(binding){
+        with(binding) {
             episodesFragmentSearch.setOnClickListener {
                 episodeFragmentSearchEditText.requestFocus()
                 episodeFragmentSearchEditText.openKeyboard(requireContext())
@@ -84,10 +82,8 @@ class EpisodesFragment : BaseFragment<FragmentEpisodesBinding>(FragmentEpisodesB
         TODO("Not yet implemented")
     }
 
-
     companion object {
 
         private const val EPISODE_DATA = "EPISODE_DATA"
     }
-
 }

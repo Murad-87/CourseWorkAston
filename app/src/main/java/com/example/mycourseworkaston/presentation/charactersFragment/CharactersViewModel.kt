@@ -1,8 +1,10 @@
 package com.example.mycourseworkaston.presentation.charactersFragment
 
 import android.util.Log
-import androidx.lifecycle.*
-import com.example.mycourseworkaston.domain.model.CharacterInfoDomainModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.mycourseworkaston.domain.useCase.CharacterListUseCase
 import com.example.mycourseworkaston.presentation.model.CharacterUiModel
 import com.example.mycourseworkaston.presentation.model.converter.toUi
@@ -39,6 +41,5 @@ class CharactersViewModel @Inject constructor(
                 Log.d("TESTING", "${it.message}")
             }
         }
-
     }
 }

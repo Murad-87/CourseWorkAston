@@ -3,7 +3,6 @@ package com.example.mycourseworkaston.data.repository
 import com.example.mycourseworkaston.data.local.converters.toDomain
 import com.example.mycourseworkaston.data.local.dao.EpisodeDao
 import com.example.mycourseworkaston.data.remote.api.ApiServiceEpisode
-import com.example.mycourseworkaston.data.remote.model.dataEpisodes.EpisodeSingleRemote
 import com.example.mycourseworkaston.data.repository.mapper.EpisodeRemoteToEpisodeLocal
 import com.example.mycourseworkaston.domain.model.EpisodeInfoDomainModel
 import com.example.mycourseworkaston.domain.repository.EpisodeRepository
@@ -15,7 +14,7 @@ class EpisodeRepositoryImpl @Inject constructor(
     private val mapperEpisode: EpisodeRemoteToEpisodeLocal
 ) : EpisodeRepository {
 
-    suspend fun loadDataEpisodeList(){
+    suspend fun loadDataEpisodeList() {
         var response = api.getEpisodesList()
         for (i in response.results) {
             dao.insertEpisode(mapperEpisode.mapEpisode(i))

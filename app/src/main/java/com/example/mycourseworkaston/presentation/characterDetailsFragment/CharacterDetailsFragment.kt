@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import com.example.mycourseworkaston.RickAndMortyApplication
-import com.example.mycourseworkaston.data.remote.model.dataEpisodes.EpisodeSingleRemote
 import com.example.mycourseworkaston.databinding.FragmentCharacterDetailsBinding
 import com.example.mycourseworkaston.di.ViewModelFactory
 import com.example.mycourseworkaston.presentation.episodesFragment.episodesAdapter.EpisodesAdapter

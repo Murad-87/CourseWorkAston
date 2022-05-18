@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import com.example.mycourseworkaston.RickAndMortyApplication
-import com.example.mycourseworkaston.data.remote.model.dataCharacters.CharacterSingleRemote
 import com.example.mycourseworkaston.databinding.FragmentLocationDetailsBinding
 import com.example.mycourseworkaston.di.ViewModelFactory
 import com.example.mycourseworkaston.presentation.charactersFragment.charactersAdapter.CharactersAdapter
@@ -15,11 +14,12 @@ import com.example.mycourseworkaston.utils.BaseFragment
 import javax.inject.Inject
 
 class LocationDetailsFragment :
-    BaseFragment<FragmentLocationDetailsBinding>(FragmentLocationDetailsBinding::inflate), ItemClickCharacter {
+    BaseFragment<FragmentLocationDetailsBinding>(FragmentLocationDetailsBinding::inflate),
+    ItemClickCharacter {
 
-        @Inject
-        lateinit var viewModelFactory: ViewModelFactory
-        private val viewModel: LocationDetailsViewModel by viewModels { viewModelFactory }
+    @Inject
+    lateinit var viewModelFactory: ViewModelFactory
+    private val viewModel: LocationDetailsViewModel by viewModels { viewModelFactory }
     private val adapter: CharactersAdapter by lazy { CharactersAdapter(this) }
 
     override fun onAttach(context: Context) {

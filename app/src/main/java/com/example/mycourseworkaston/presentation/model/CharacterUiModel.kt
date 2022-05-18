@@ -17,4 +17,4 @@ data class CharacterUiModel(
     val originName: String,
     val originUrl: String,
     val episode: List<String>
-): Parcelable
+) : Parcelable

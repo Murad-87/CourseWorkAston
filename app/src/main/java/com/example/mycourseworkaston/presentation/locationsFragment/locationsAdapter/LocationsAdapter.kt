@@ -7,9 +7,10 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mycourseworkaston.data.remote.model.dataLocations.LocationSingleRemote
 import com.example.mycourseworkaston.databinding.LocationItemBinding
+import com.example.mycourseworkaston.presentation.model.LocationUiModel
 
 class LocationsAdapter(private val listener: ItemClickLocation) :
-    ListAdapter<LocationSingleRemote, LocationsAdapter.LocationViewHolder>(LocationDiffCallback()) {
+    ListAdapter<LocationUiModel, LocationsAdapter.LocationViewHolder>(LocationDiffCallback()) {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -31,7 +32,7 @@ class LocationsAdapter(private val listener: ItemClickLocation) :
         private val listener: ItemClickLocation
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(location: LocationSingleRemote) {
+        fun bind(location: LocationUiModel) {
             binding.apply {
                 itemLocationName.text = location.name
                 itemLocationType.text = location.type
@@ -42,15 +43,15 @@ class LocationsAdapter(private val listener: ItemClickLocation) :
         }
     }
 
-    class LocationDiffCallback : DiffUtil.ItemCallback<LocationSingleRemote>() {
+    class LocationDiffCallback : DiffUtil.ItemCallback<LocationUiModel>() {
         override fun areItemsTheSame(
-            oldItem: LocationSingleRemote,
-            newItem: LocationSingleRemote
+            oldItem: LocationUiModel,
+            newItem: LocationUiModel
         ) = oldItem.id == newItem.id
 
         override fun areContentsTheSame(
-            oldItem: LocationSingleRemote,
-            newItem: LocationSingleRemote
+            oldItem: LocationUiModel,
+            newItem: LocationUiModel
         ) = oldItem == newItem
     }
 }

@@ -1,8 +1,8 @@
 package com.example.mycourseworkaston.data.repository
 
+import com.example.mycourseworkaston.data.local.converters.toDomain
 import com.example.mycourseworkaston.data.local.dao.LocationDao
 import com.example.mycourseworkaston.data.remote.api.ApiServiceLocation
-import com.example.mycourseworkaston.data.remote.model.dataLocations.LocationSingleRemote
 import com.example.mycourseworkaston.data.repository.mapper.LocationRemoteToLocationLocal
 import com.example.mycourseworkaston.domain.model.LocationInfoDomainModel
 import com.example.mycourseworkaston.domain.repository.LocationRepository
@@ -14,17 +14,32 @@ class LocationRepositoryImpl @Inject constructor(
     private val mapperLocation: LocationRemoteToLocationLocal
 ) : LocationRepository {
 
-    override fun getLocationList(): List<LocationInfoDomainModel> {
-        TODO("Not yet implemented")
+    suspend fun loadDataLocationList() {
+        var response = api.getLocationList()
+        for (i in response.results) {
+            dao.insertLocation(mapperLocation.mapLocation(i))
+        }
+        for (i in 2..response.info.pages) {
+
+            response = api.getLocationList(i)
+            for (j in response.results) {
+                dao.insertLocation(mapperLocation.mapLocation(j))
+            }
+        }
+    }
+
+    override suspend fun getLocationList(): List<LocationInfoDomainModel> {
+        var dataLocation = dao.getLocationList()
+        return if (dataLocation.isNotEmpty()) {
+            dataLocation.map { it.toDomain() }
+        } else {
+            loadDataLocationList()
+            dataLocation = dao.getLocationList()
+            dataLocation.map { it.toDomain() }
+        }
     }
 
     override fun getLocationItem(itemId: Int): LocationInfoDomainModel {
         TODO("Not yet implemented")
     }
-
-    override suspend fun insertLocation(locationRemote: LocationSingleRemote) {
-        locationRemote.let(mapperLocation::mapLocation)
-            .let { dao.insertLocation(it) }
-    }
-
 }

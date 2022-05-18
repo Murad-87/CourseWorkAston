@@ -58,7 +58,7 @@ class CharactersFragment :
     }
 
     private fun initViews() {
-        with(binding){
+        with(binding) {
             charactersFragmentSearch.setOnClickListener {
                 characterFragmentSearchEditText.requestFocus()
                 characterFragmentSearchEditText.openKeyboard(requireContext())
@@ -95,7 +95,5 @@ class CharactersFragment :
     companion object {
 
         private const val CHARACTER_DATA = "CHARACTER_DATA"
-
-
     }
 }

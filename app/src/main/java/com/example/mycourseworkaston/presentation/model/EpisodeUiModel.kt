@@ -12,4 +12,4 @@ data class EpisodeUiModel(
     val created: String,
     val url: String,
     val name: String
-): Parcelable
+) : Parcelable

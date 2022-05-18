@@ -1,8 +1,8 @@
 package com.example.mycourseworkaston.presentation.locationsFragment.locationsAdapter
 
-import com.example.mycourseworkaston.data.remote.model.dataLocations.LocationSingleRemote
+import com.example.mycourseworkaston.presentation.model.LocationUiModel
 
 interface ItemClickLocation {
 
-    fun onItemClick(location: LocationSingleRemote)
+    fun onItemClick(location: LocationUiModel)
 }

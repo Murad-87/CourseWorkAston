@@ -3,6 +3,5 @@ package com.example.mycourseworkaston.presentation.episodesFragment.episodesAdap
 import com.example.mycourseworkaston.presentation.model.EpisodeUiModel
 
 interface ItemClickEpisode {
-
     fun onItemClick(episode: EpisodeUiModel)
 }

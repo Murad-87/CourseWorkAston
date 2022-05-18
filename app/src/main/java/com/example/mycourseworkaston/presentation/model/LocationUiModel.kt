@@ -11,4 +11,4 @@ data class LocationUiModel(
     val type: String,
     val dimension: String,
     val created: String
-): Parcelable
+) : Parcelable

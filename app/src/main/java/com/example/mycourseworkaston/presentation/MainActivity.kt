@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.bottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
-                R.id.bottom_menu_characters->openFragment(charactersFragment)
+                R.id.bottom_menu_characters -> openFragment(charactersFragment)
                 R.id.bottom_menu_episodes -> openFragment(episodesFragment)
                 R.id.bottom_menu_locations -> openFragment(locationsFragment)
             }
