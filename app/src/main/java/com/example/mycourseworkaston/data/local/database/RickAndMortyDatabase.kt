@@ -12,7 +12,7 @@ import com.example.mycourseworkaston.data.local.model.LocationLocalEntity
 
 @Database(
     entities = [CharacterLocalEntity::class, EpisodeLocalEntity::class, LocationLocalEntity::class],
-    version = 2
+    version = 3
 )
 @TypeConverters(Converters::class)
 abstract class RickAndMortyDatabase : RoomDatabase() {
@@ -22,8 +22,6 @@ abstract class RickAndMortyDatabase : RoomDatabase() {
     abstract fun getEpisodeDao(): EpisodeDao
 
     abstract fun getLocationDao(): LocationDao
-
-
 
     companion object {
         const val DATABASE_NAME = "rickAndMorty_database"

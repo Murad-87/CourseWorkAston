@@ -27,7 +27,7 @@ interface ApplicationComponent {
     fun inject(locationsFragment: LocationsFragment)
 
     fun inject(locationDetailsFragment: LocationDetailsFragment)
-    
+
     @Component.Factory
     interface Factory {
 

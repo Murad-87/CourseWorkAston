@@ -1,11 +1,6 @@
 package com.example.mycourseworkaston.data.remote.model.dataCharacters
 
-import android.os.Parcelable
-import androidx.annotation.Keep
-import kotlinx.android.parcel.Parcelize
 
-@Keep
-@Parcelize
 data class CharacterSingleRemote(
     val created: String,
     val episode: List<String>,
@@ -19,4 +14,4 @@ data class CharacterSingleRemote(
     val status: String,
     val type: String,
     val url: String
-): Parcelable
+)

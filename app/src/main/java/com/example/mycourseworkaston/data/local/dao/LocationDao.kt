@@ -13,6 +13,9 @@ interface LocationDao {
     @Query("SELECT * FROM location_table")
     fun flowLocation(): Flow<List<LocationLocalEntity>>
 
+    @Query("SELECT * FROM location_table WHERE id = :locationId LIMIT 1")
+    fun flowLocationItem(locationId: Int): Flow<LocationLocalEntity>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertLocation(location: LocationLocalEntity)
 }

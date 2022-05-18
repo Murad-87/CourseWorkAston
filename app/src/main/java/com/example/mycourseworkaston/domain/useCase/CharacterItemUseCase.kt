@@ -7,8 +7,7 @@ import javax.inject.Inject
 class CharacterItemUseCase @Inject constructor(
     private val repository: CharacterRepository
 ) {
-
-    suspend fun getCharacterItem(characterItem: Int): CharacterInfoDomainModel{
+    suspend fun getCharacterItem(characterItem: Int): CharacterInfoDomainModel {
         return repository.getCharacterItem(characterItem)
     }
 }

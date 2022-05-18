@@ -12,5 +12,8 @@ fun CharacterLocalEntity.toDomain() = CharacterInfoDomainModel(
     image = image,
     type = type,
     locationName = locationName,
-    originName = originName
+    locationUrl = locationUrl,
+    originName = originName,
+    originUrl = originUrl,
+    episode = episode
 )

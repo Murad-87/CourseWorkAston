@@ -5,8 +5,8 @@ import com.example.mycourseworkaston.data.remote.model.dataLocations.LocationSin
 import javax.inject.Inject
 
 class LocationRemoteToLocationLocal @Inject constructor() {
-    fun mapLocation(remoteLocation: LocationSingleRemote): LocationLocalEntity{
-        with(remoteLocation){
+    fun mapLocation(remoteLocation: LocationSingleRemote): LocationLocalEntity {
+        with(remoteLocation) {
             return LocationLocalEntity(
                 id,
                 name,

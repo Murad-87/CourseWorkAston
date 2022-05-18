@@ -47,21 +47,20 @@ interface DataModule {
 
         @Provides
         @ApplicationScope
-        fun provideCharacterDao(rickAndMortyDatabase: RickAndMortyDatabase): CharacterDao{
+        fun provideCharacterDao(rickAndMortyDatabase: RickAndMortyDatabase): CharacterDao {
             return rickAndMortyDatabase.getCharacterDao()
         }
 
         @Provides
         @ApplicationScope
-        fun provideEpisodeDao(rickAndMortyDatabase: RickAndMortyDatabase): EpisodeDao{
+        fun provideEpisodeDao(rickAndMortyDatabase: RickAndMortyDatabase): EpisodeDao {
             return rickAndMortyDatabase.getEpisodeDao()
         }
 
         @Provides
         @ApplicationScope
-        fun provideLocationDao(rickAndMortyDatabase: RickAndMortyDatabase): LocationDao{
+        fun provideLocationDao(rickAndMortyDatabase: RickAndMortyDatabase): LocationDao {
             return rickAndMortyDatabase.getLocationDao()
         }
-
     }
 }

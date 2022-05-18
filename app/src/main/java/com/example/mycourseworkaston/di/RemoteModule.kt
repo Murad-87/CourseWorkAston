@@ -20,7 +20,7 @@ class RemoteModule {
 
     @Provides
     @ApplicationScope
-    fun provideLoggingInterceptor() : HttpLoggingInterceptor {
+    fun provideLoggingInterceptor(): HttpLoggingInterceptor {
         return HttpLoggingInterceptor().apply { setLevel(HttpLoggingInterceptor.Level.BODY) }
     }
 
@@ -34,7 +34,10 @@ class RemoteModule {
 
     @Provides
     @ApplicationScope
-    fun provideRetrofit(gsonConverterFactory: GsonConverterFactory, okHttpClient: OkHttpClient): Retrofit {
+    fun provideRetrofit(
+        gsonConverterFactory: GsonConverterFactory,
+        okHttpClient: OkHttpClient
+    ): Retrofit {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(gsonConverterFactory)
@@ -44,13 +47,16 @@ class RemoteModule {
 
     @Provides
     @ApplicationScope
-    fun provideApiServiceCharacter(retrofit: Retrofit): ApiServiceCharacter = retrofit.create(ApiServiceCharacter::class.java)
+    fun provideApiServiceCharacter(retrofit: Retrofit): ApiServiceCharacter =
+        retrofit.create(ApiServiceCharacter::class.java)
 
     @Provides
     @ApplicationScope
-    fun provideApiServiceEpisode(retrofit: Retrofit): ApiServiceEpisode = retrofit.create(ApiServiceEpisode::class.java)
+    fun provideApiServiceEpisode(retrofit: Retrofit): ApiServiceEpisode =
+        retrofit.create(ApiServiceEpisode::class.java)
 
     @Provides
     @ApplicationScope
-    fun provideApiServiceLocation(retrofit: Retrofit): ApiServiceLocation= retrofit.create(ApiServiceLocation::class.java)
+    fun provideApiServiceLocation(retrofit: Retrofit): ApiServiceLocation =
+        retrofit.create(ApiServiceLocation::class.java)
 }

@@ -7,8 +7,7 @@ import javax.inject.Inject
 class EpisodeItemUseCase @Inject constructor(
     private val repository: EpisodeRepository
 ) {
-
-    suspend fun getEpisodeItem(episodeItem: Int): EpisodeInfoDomainModel{
+    suspend fun getEpisodeItem(episodeItem: Int): EpisodeInfoDomainModel {
         return repository.getEpisodeItem(episodeItem)
     }
 }

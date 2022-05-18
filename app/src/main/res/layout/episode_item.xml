@@ -21,8 +21,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="5dp"
         android:text="Name:"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textColor="@color/black"/>
 
     <TextView
         android:id="@+id/episode_static_episode"
@@ -32,8 +31,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="5dp"
         android:text="Episode:"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/episode_static_air_date"
@@ -43,18 +41,16 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="5dp"
         android:text="Air_date:"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/item_episode_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_toEndOf="@id/episode_static_name"
         android:textColor="@color/black"
-        android:textSize="20sp"
         tools:text="The Ricklantis Mixup" />
 
     <TextView
@@ -62,11 +58,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/episode_static_name"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_toEndOf="@id/episode_static_episode"
         android:textColor="@color/black"
-        android:textSize="20sp"
         tools:text="S03E07" />
 
     <TextView
@@ -74,11 +69,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/episode_static_episode"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_toEndOf="@id/episode_static_air_date"
         android:textColor="@color/black"
-        android:textSize="20sp"
         tools:text="September 10, 2017" />
 
 </RelativeLayout>

@@ -5,78 +5,96 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/details_location_static_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
-        android:text="Name:"
-        android:textColor="@color/black"
-        android:textSize="18sp"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/location_details_fragment_swipe_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-    <TextView
-        android:id="@+id/details_location_static_type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
-        android:text="Type:"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/details_location_static_name" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/details_location_static_dimension"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
-        android:text="Dimension:"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/details_location_static_type" />
+            <TextView
+                android:id="@+id/details_location_static_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:text="Name:"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/details_location_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/details_location_static_name"
-        app:layout_constraintStart_toEndOf="@+id/details_location_static_name"
-        app:layout_constraintTop_toTopOf="@+id/details_location_static_name"
-        app:layout_constraintVertical_bias="0.0"
-        tools:text="Citadel of Ricks" />
+            <TextView
+                android:id="@+id/details_location_static_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:text="Type:"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/details_location_static_name" />
 
-    <TextView
-        android:id="@+id/details_location_type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/details_location_static_type"
-        app:layout_constraintStart_toEndOf="@+id/details_location_static_type"
-        app:layout_constraintTop_toTopOf="@+id/details_location_static_type"
-        app:layout_constraintVertical_bias="0.0"
-        tools:text="Space station" />
+            <TextView
+                android:id="@+id/details_location_static_dimension"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:text="Dimension:"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/details_location_static_type" />
 
-    <TextView
-        android:id="@+id/details_location_dimension"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/details_location_static_dimension"
-        app:layout_constraintStart_toEndOf="@+id/details_location_static_dimension"
-        app:layout_constraintTop_toTopOf="@+id/details_location_static_dimension"
-        app:layout_constraintVertical_bias="0.0"
-        tools:text="unknown" />
+            <TextView
+                android:id="@+id/details_location_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/details_location_static_name"
+                app:layout_constraintStart_toEndOf="@+id/details_location_static_name"
+                app:layout_constraintTop_toTopOf="@+id/details_location_static_name"
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="Citadel of Ricks" />
+
+            <TextView
+                android:id="@+id/details_location_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/details_location_static_type"
+                app:layout_constraintStart_toEndOf="@+id/details_location_static_type"
+                app:layout_constraintTop_toTopOf="@+id/details_location_static_type"
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="Space station" />
+
+            <TextView
+                android:id="@+id/details_location_dimension"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/details_location_static_dimension"
+                app:layout_constraintStart_toEndOf="@+id/details_location_static_dimension"
+                app:layout_constraintTop_toTopOf="@+id/details_location_static_dimension"
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="unknown" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

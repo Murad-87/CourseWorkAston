@@ -5,6 +5,6 @@ import javax.inject.Inject
 
 class FilterCharacterUseCase @Inject constructor(
     private val repository: CharacterRepository
-){
+) {
 
 }

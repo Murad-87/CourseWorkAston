@@ -14,5 +14,8 @@ data class CharacterLocalEntity(
     val image: String,
     val type: String,
     val locationName: String,
-    val originName: String
+    val locationUrl: String,
+    val originName: String,
+    val originUrl: String,
+    val episode: List<String>,
 )

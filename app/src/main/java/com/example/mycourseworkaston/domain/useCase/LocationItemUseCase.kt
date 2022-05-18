@@ -7,8 +7,7 @@ import javax.inject.Inject
 class LocationItemUseCase @Inject constructor(
     private val repository: LocationRepository
 ) {
-
-    suspend fun getLocationItem(locationItem: Int): LocationInfoDomainModel{
+    suspend fun getLocationItem(locationItem: Int): LocationInfoDomainModel {
         return repository.getLocationItem(locationItem)
     }
 }

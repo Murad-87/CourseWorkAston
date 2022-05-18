@@ -16,7 +16,10 @@ class CharacterRemoteToCharacterLocal @Inject constructor() {
                 image,
                 type,
                 locationName = location.name,
-                originName = origin.name
+                locationUrl = location.url,
+                originName = origin.name,
+                originUrl = origin.url,
+                episode = episode
             )
         }
     }

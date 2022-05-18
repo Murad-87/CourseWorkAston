@@ -3,7 +3,6 @@ package com.example.mycourseworkaston.data.local.model
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-
 @Entity(tableName = "location_table")
 data class LocationLocalEntity(
     @PrimaryKey(autoGenerate = true)
