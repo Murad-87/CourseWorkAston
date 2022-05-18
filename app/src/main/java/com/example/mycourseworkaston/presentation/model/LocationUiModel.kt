@@ -9,5 +9,6 @@ data class LocationUiModel(
     val name: String,
     val residents: List<String>,
     val type: String,
-    val dimension: String
+    val dimension: String,
+    val created: String
 ): Parcelable

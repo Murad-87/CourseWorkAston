@@ -8,5 +8,7 @@ fun EpisodeInfoDomainModel.toUi() = EpisodeUiModel(
     air_date = air_date,
     characters = characters,
     episode = episode,
-    name = name
+    name = name,
+    created = created,
+    url = url
 )

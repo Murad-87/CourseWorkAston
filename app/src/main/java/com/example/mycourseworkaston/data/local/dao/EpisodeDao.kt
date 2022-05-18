@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 interface EpisodeDao {
 
     @Query("SELECT * FROM episode_table")
-    fun flowEpisode(): Flow<List<EpisodeLocalEntity>>
+    fun getEpisodeList(): List<EpisodeLocalEntity>
 
     @Query("SELECT * FROM episode_table WHERE id = :episodeId LIMIT 1")
     fun flowEpisodeItem(episodeId: Int): Flow<EpisodeLocalEntity>

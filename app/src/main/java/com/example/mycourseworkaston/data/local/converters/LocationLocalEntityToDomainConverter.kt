@@ -8,5 +8,6 @@ fun LocationLocalEntity.toDomain() = LocationInfoDomainModel(
     name = name,
     residents = residents,
     type = type,
-    dimension = dimension
+    dimension = dimension,
+    created = created
 )

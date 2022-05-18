@@ -12,7 +12,8 @@ class LocationRemoteToLocationLocal @Inject constructor() {
                 name,
                 residents,
                 type,
-                dimension
+                dimension,
+                created
             )
         }
     }

@@ -10,6 +10,7 @@ import com.example.mycourseworkaston.databinding.FragmentCharacterDetailsBinding
 import com.example.mycourseworkaston.di.ViewModelFactory
 import com.example.mycourseworkaston.presentation.episodesFragment.episodesAdapter.EpisodesAdapter
 import com.example.mycourseworkaston.presentation.episodesFragment.episodesAdapter.ItemClickEpisode
+import com.example.mycourseworkaston.presentation.model.EpisodeUiModel
 import com.example.mycourseworkaston.utils.BaseFragment
 import javax.inject.Inject
 
@@ -32,7 +33,7 @@ class CharacterDetailsFragment :
         super.onViewCreated(view, savedInstanceState)
     }
 
-    override fun onItemClick(episode: EpisodeSingleRemote) {
+    override fun onItemClick(episode: EpisodeUiModel) {
         TODO("Not yet implemented")
     }
 }

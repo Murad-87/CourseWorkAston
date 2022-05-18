@@ -1,10 +1,12 @@
 package com.example.mycourseworkaston.presentation.charactersFragment
 
+import android.util.Log
 import androidx.lifecycle.*
 import com.example.mycourseworkaston.domain.model.CharacterInfoDomainModel
 import com.example.mycourseworkaston.domain.useCase.CharacterListUseCase
 import com.example.mycourseworkaston.presentation.model.CharacterUiModel
 import com.example.mycourseworkaston.presentation.model.converter.toUi
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -24,24 +26,19 @@ class CharactersViewModel @Inject constructor(
     }
 
     private fun getCharacterList() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             kotlin.runCatching {
                 characterUseCase.getCharacterList()
+
             }.onSuccess { response ->
                 isLoadingMutable.postValue(false)
                 characterListMutable.postValue(response.map { it.toUi() })
+
             }.onFailure {
                 isLoadingMutable.postValue(false)
+                Log.d("TESTING", "${it.message}")
             }
         }
-//        kotlin.runCatching {
-//            viewModelScope.launch {
-//
-//            }
-//        }
-//        viewModelScope.launch {
-//            val response = characterUseCase.getCharacterList().map { it.toUi() }
-//            characterListMutable.postValue(response)
-//        }
+
     }
 }

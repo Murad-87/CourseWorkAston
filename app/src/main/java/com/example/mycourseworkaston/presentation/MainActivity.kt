@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun openFragment(fragment: Fragment) =
+    fun openFragment(fragment: Fragment) =
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.activity_frame_layout, fragment)
             addToBackStack("Init")

@@ -12,7 +12,9 @@ class EpisodeRemoteToEpisodeLocal @Inject constructor() {
                 air_date,
                 characters,
                 episode,
-                name
+                name,
+                created,
+                url
             )
         }
     }

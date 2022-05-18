@@ -7,9 +7,10 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mycourseworkaston.data.remote.model.dataEpisodes.EpisodeSingleRemote
 import com.example.mycourseworkaston.databinding.EpisodeItemBinding
+import com.example.mycourseworkaston.presentation.model.EpisodeUiModel
 
 class EpisodesAdapter(private val listener: ItemClickEpisode) :
-    ListAdapter<EpisodeSingleRemote, EpisodesAdapter.EpisodeViewHolder>(EpisodeDiffCallback()) {
+    ListAdapter<EpisodeUiModel, EpisodesAdapter.EpisodeViewHolder>(EpisodeDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EpisodeViewHolder {
         val binding = EpisodeItemBinding
@@ -30,7 +31,7 @@ class EpisodesAdapter(private val listener: ItemClickEpisode) :
 
         ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(episode: EpisodeSingleRemote) {
+        fun bind(episode: EpisodeUiModel) {
             binding.apply {
                 itemEpisodeName.text = episode.name
                 episodeItemEpisode.text = episode.episode
@@ -41,15 +42,15 @@ class EpisodesAdapter(private val listener: ItemClickEpisode) :
         }
     }
 
-    class EpisodeDiffCallback : DiffUtil.ItemCallback<EpisodeSingleRemote>() {
+    class EpisodeDiffCallback : DiffUtil.ItemCallback<EpisodeUiModel>() {
         override fun areItemsTheSame(
-            oldItem: EpisodeSingleRemote,
-            newItem: EpisodeSingleRemote
+            oldItem: EpisodeUiModel,
+            newItem: EpisodeUiModel
         ) = oldItem.id == newItem.id
 
         override fun areContentsTheSame(
-            oldItem: EpisodeSingleRemote,
-            newItem: EpisodeSingleRemote
+            oldItem: EpisodeUiModel,
+            newItem: EpisodeUiModel
         ) = oldItem == newItem
     }
 }

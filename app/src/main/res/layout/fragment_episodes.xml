@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/character_fragment_search_image"
+            android:id="@+id/episode_fragment_search_image"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_margin="2dp"
@@ -25,7 +25,7 @@
             android:src="@drawable/ic_search" />
 
         <EditText
-            android:id="@+id/character_fragment_search_edit_text"
+            android:id="@+id/episode_fragment_search_edit_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@android:color/transparent"
@@ -64,6 +64,18 @@
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
         android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/pagination_progress_bar_episode"
+        style="?attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

@@ -9,5 +9,7 @@ data class EpisodeUiModel(
     val air_date: String,
     val characters: List<String>,
     val episode: String,
+    val created: String,
+    val url: String,
     val name: String
 ): Parcelable

@@ -8,5 +8,7 @@ fun EpisodeLocalEntity.toDomain() = EpisodeInfoDomainModel(
     air_date = air_date,
     characters = characters,
     episode = episode,
-    name = name
+    name = name,
+    url = url,
+    created = created
 )
