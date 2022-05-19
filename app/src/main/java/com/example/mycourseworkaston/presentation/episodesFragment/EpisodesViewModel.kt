@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.mycourseworkaston.domain.useCase.EpisodeItemUseCase
 import com.example.mycourseworkaston.domain.useCase.EpisodeListUseCase
 import com.example.mycourseworkaston.presentation.model.EpisodeUiModel
 import com.example.mycourseworkaston.presentation.model.converter.toUi
@@ -15,7 +14,6 @@ import javax.inject.Inject
 
 class EpisodesViewModel @Inject constructor(
     private val episodeUseCase: EpisodeListUseCase,
-    private val episodeItemUseCase: EpisodeItemUseCase
 ) : ViewModel() {
 
     private val episodeListMutable: MutableLiveData<List<EpisodeUiModel>> = MutableLiveData()

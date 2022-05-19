@@ -3,6 +3,7 @@ package com.example.mycourseworkaston.presentation.episodesFragment
 import android.content.Context
 import android.os.Bundle
 import android.view.View
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
@@ -10,6 +11,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.mycourseworkaston.RickAndMortyApplication
 import com.example.mycourseworkaston.databinding.FragmentEpisodesBinding
 import com.example.mycourseworkaston.di.ViewModelFactory
+import com.example.mycourseworkaston.presentation.MainActivity
+import com.example.mycourseworkaston.presentation.episodeDetailsFragment.EpisodeDetailsFragment
 import com.example.mycourseworkaston.presentation.episodesFragment.episodesAdapter.EpisodesAdapter
 import com.example.mycourseworkaston.presentation.episodesFragment.episodesAdapter.ItemClickEpisode
 import com.example.mycourseworkaston.presentation.model.EpisodeUiModel
@@ -79,11 +82,23 @@ class EpisodesFragment : BaseFragment<FragmentEpisodesBinding>(FragmentEpisodesB
     }
 
     override fun onItemClick(episode: EpisodeUiModel) {
-        TODO("Not yet implemented")
+        openEpisodeDetails(EpisodeDetailsFragment.newInstance(episode))
+    }
+
+    private fun openEpisodeDetails(detailsFragment: EpisodeDetailsFragment){
+        (requireActivity() as MainActivity).openFragment(detailsFragment)
+
     }
 
     companion object {
 
         private const val EPISODE_DATA = "EPISODE_DATA"
+
+        fun newInstance(episode: EpisodeUiModel) =
+            EpisodesFragment().apply {
+                arguments = bundleOf(
+                    EPISODE_DATA to episode
+                )
+            }
     }
 }

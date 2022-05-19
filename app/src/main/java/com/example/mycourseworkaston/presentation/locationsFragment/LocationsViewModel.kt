@@ -5,9 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.mycourseworkaston.domain.useCase.LocationItemUseCase
 import com.example.mycourseworkaston.domain.useCase.LocationListUseCase
-import com.example.mycourseworkaston.presentation.model.EpisodeUiModel
 import com.example.mycourseworkaston.presentation.model.LocationUiModel
 import com.example.mycourseworkaston.presentation.model.converter.toUi
 import kotlinx.coroutines.Dispatchers
@@ -16,7 +14,6 @@ import javax.inject.Inject
 
 class LocationsViewModel @Inject constructor(
     private val locationUseCase: LocationListUseCase,
-    private val locationItemUseCase: LocationItemUseCase
 ) : ViewModel() {
 
     private val locationListMutable: MutableLiveData<List<LocationUiModel>> = MutableLiveData()

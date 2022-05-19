@@ -40,14 +40,7 @@ class CharacterRepositoryImpl @Inject constructor(
         }
     }
 
-//    override fun getCharacterList(): Flow<List<CharacterInfoDomainModel>> {
-//        return flow<List<CharacterInfoDomainModel>> {
-//
-//            Log.d("TESTING", "${api.getCharacterList().results.first().name}")
-//        }.flowOn(Dispatchers.IO)
-//    }
-
-    override fun getCharacterItem(itemId: Int): CharacterInfoDomainModel {
+    override suspend fun getCharacterListFilter(): List<CharacterInfoDomainModel> {
         TODO("Not yet implemented")
     }
 }

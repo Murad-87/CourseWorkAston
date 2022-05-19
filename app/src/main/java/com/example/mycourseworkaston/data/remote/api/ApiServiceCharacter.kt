@@ -14,11 +14,6 @@ interface ApiServiceCharacter {
         @Query("page") page: Int = 1
     ): CharacterRemoteList
 
-    @GET("character/{id}")
-    suspend fun getCharacterById(
-        @Path("character-id") id: String
-    ): CharacterSingleRemote
-
     @GET("character/")
     suspend fun getCharactersListFilter(
         @Query("name") name: String = "",

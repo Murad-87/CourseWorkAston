@@ -1,6 +1,5 @@
 package com.example.mycourseworkaston.presentation.charactersFragment
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -19,7 +18,6 @@ class CharactersViewModel @Inject constructor(
     private val characterListMutable: MutableLiveData<List<CharacterUiModel>> =
         MutableLiveData()
     val characterList: LiveData<List<CharacterUiModel>> = characterListMutable
-
     private val isLoadingMutable: MutableLiveData<Boolean> = MutableLiveData(true)
     val isLoading: LiveData<Boolean> = isLoadingMutable
 
@@ -31,14 +29,11 @@ class CharactersViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             kotlin.runCatching {
                 characterUseCase.getCharacterList()
-
             }.onSuccess { response ->
                 isLoadingMutable.postValue(false)
                 characterListMutable.postValue(response.map { it.toUi() })
-
             }.onFailure {
                 isLoadingMutable.postValue(false)
-                Log.d("TESTING", "${it.message}")
             }
         }
     }

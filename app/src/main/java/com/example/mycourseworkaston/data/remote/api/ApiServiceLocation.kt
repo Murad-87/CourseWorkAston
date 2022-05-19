@@ -14,11 +14,6 @@ interface ApiServiceLocation {
         @Query("page") page: Int = 1
     ): LocationsRemoteList
 
-    @GET("location/{id}")
-    suspend fun getLocationById(
-        @Path("location-id") id: String
-    ): LocationSingleRemote
-
     @GET("location/")
     suspend fun getLocationListFilter(
         @Query("name") name: String = "",

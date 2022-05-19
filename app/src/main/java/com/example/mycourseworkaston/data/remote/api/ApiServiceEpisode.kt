@@ -14,11 +14,6 @@ interface ApiServiceEpisode {
         @Query("page") page: Int = 1
     ): EpisodeRemoteList
 
-    @GET("episode/{id}")
-    suspend fun getEpisodeById(
-        @Path("episode-id") id: String
-    ): EpisodeSingleRemote
-
     @GET("episode/")
     suspend fun getEpisodesListFilter(
         @Query("name") name: String = "",

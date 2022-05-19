@@ -13,9 +13,6 @@ interface EpisodeDao {
     @Query("SELECT * FROM episode_table")
     fun getEpisodeList(): List<EpisodeLocalEntity>
 
-    @Query("SELECT * FROM episode_table WHERE id = :episodeId LIMIT 1")
-    fun flowEpisodeItem(episodeId: Int): Flow<EpisodeLocalEntity>
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertEpisode(episode: EpisodeLocalEntity)
 }

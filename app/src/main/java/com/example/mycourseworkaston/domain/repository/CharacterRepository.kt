@@ -7,6 +7,5 @@ interface CharacterRepository {
 
     suspend fun getCharacterList(): List<CharacterInfoDomainModel>
 
-    fun getCharacterItem(itemId: Int): CharacterInfoDomainModel
-
+    suspend fun getCharacterListFilter() : List<CharacterInfoDomainModel>
 }

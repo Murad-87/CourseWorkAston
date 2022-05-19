@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/MyCourseWorkAston/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.16" />
         <entry key="..\:/MyCourseWorkAston/app/src/main/res/drawable/corners_for_layout.xml" value="0.16" />
+        <entry key="..\:/MyCourseWorkAston/app/src/main/res/drawable/ic_arrow_back.xml" value="0.1555" />
         <entry key="..\:/MyCourseWorkAston/app/src/main/res/drawable/ic_filter.xml" value="0.1615" />
         <entry key="..\:/MyCourseWorkAston/app/src/main/res/drawable/ic_launcher_background.xml" value="0.16" />
         <entry key="..\:/MyCourseWorkAston/app/src/main/res/drawable/ic_search.xml" value="0.16" />
@@ -16,10 +17,11 @@
         <entry key="..\:/MyCourseWorkAston/app/src/main/res/layout/fragment_character_details.xml" value="0.2" />
         <entry key="..\:/MyCourseWorkAston/app/src/main/res/layout/fragment_characters.xml" value="0.2" />
         <entry key="..\:/MyCourseWorkAston/app/src/main/res/layout/fragment_episode_details.xml" value="0.264" />
-        <entry key="..\:/MyCourseWorkAston/app/src/main/res/layout/fragment_episodes.xml" value="0.4688581314878893" />
+        <entry key="..\:/MyCourseWorkAston/app/src/main/res/layout/fragment_episodes.xml" value="0.2" />
         <entry key="..\:/MyCourseWorkAston/app/src/main/res/layout/fragment_location_details.xml" value="0.264" />
         <entry key="..\:/MyCourseWorkAston/app/src/main/res/layout/fragment_locations.xml" value="0.2" />
         <entry key="..\:/MyCourseWorkAston/app/src/main/res/layout/location_item.xml" value="0.25" />
+        <entry key="..\:/MyCourseWorkAston/app/src/main/res/layout/toolbar_layout.xml" value="0.25" />
         <entry key="..\:/MyCourseWorkAston/app/src/main/res/menu/bottom_menu.xml" value="0.25" />
       </map>
     </option>

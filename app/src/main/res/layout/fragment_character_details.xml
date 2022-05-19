@@ -1,141 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/character_details_fragment_swipe_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/character_details_fragment_swipe_layout"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <include
+            android:id="@+id/details_character_toolbar"
+            layout="@layout/toolbar_layout" />
+
+        <ImageView
+            android:id="@+id/details_character_image"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/details_character_toolbar"
+            app:srcCompat="@drawable/ic_circle_24"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/details_character_static_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Name:"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/details_character_image"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/details_character_static_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:text="Status:"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/details_character_static_name"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/details_character_static_species"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:text="Species:"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/details_character_static_status"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/details_character_static_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:text="Gender:"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/details_character_static_species"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/details_character_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/details_character_static_name"
+            app:layout_constraintStart_toEndOf="@+id/details_character_static_name"
+            app:layout_constraintTop_toTopOf="@+id/details_character_static_name"
+            app:layout_constraintVertical_bias="1.0"
+            tools:text="Morty Smith" />
+
+        <TextView
+            android:id="@+id/details_character_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/details_character_static_status"
+            app:layout_constraintStart_toEndOf="@+id/details_character_static_status"
+            app:layout_constraintTop_toTopOf="@+id/details_character_static_status"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Alive" />
+
+        <TextView
+            android:id="@+id/details_character_species"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/details_character_static_species"
+            app:layout_constraintStart_toEndOf="@+id/details_character_static_species"
+            app:layout_constraintTop_toTopOf="@+id/details_character_static_species"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Human" />
+
+        <TextView
+            android:id="@+id/details_character_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/details_character_static_gender"
+            app:layout_constraintStart_toEndOf="@+id/details_character_static_gender"
+            app:layout_constraintTop_toTopOf="@+id/details_character_static_gender"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Male" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_character_details"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/details_character_gender"
+            tools:listitem="@layout/episode_item"/>
 
-            <ImageView
-                android:id="@+id/details_character_image"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginStart="190dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="190dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.488"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_circle_24" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/details_character_static_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Name:"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteY="232dp" />
-
-            <TextView
-                android:id="@+id/details_character_static_status"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="15dp"
-                android:text="Status:"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/details_character_static_name"
-                tools:ignore="MissingConstraints" />
-
-            <TextView
-                android:id="@+id/details_character_static_species"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="15dp"
-                android:text="Species:"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/details_character_static_status"
-                tools:ignore="MissingConstraints" />
-
-            <TextView
-                android:id="@+id/details_character_static_gender"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="15dp"
-                android:text="Gender:"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/details_character_static_species"
-                tools:ignore="MissingConstraints" />
-
-            <TextView
-                android:id="@+id/details_character_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="@+id/details_character_static_name"
-                app:layout_constraintStart_toEndOf="@+id/details_character_static_name"
-                app:layout_constraintTop_toTopOf="@+id/details_character_static_name"
-                app:layout_constraintVertical_bias="1.0"
-                tools:text="Morty Smith" />
-
-            <TextView
-                android:id="@+id/details_character_status"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="@+id/details_character_static_status"
-                app:layout_constraintStart_toEndOf="@+id/details_character_static_status"
-                app:layout_constraintTop_toTopOf="@+id/details_character_static_status"
-                app:layout_constraintVertical_bias="0.0"
-                tools:text="Alive" />
-
-            <TextView
-                android:id="@+id/details_character_species"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="@+id/details_character_static_species"
-                app:layout_constraintStart_toEndOf="@+id/details_character_static_species"
-                app:layout_constraintTop_toTopOf="@+id/details_character_static_species"
-                app:layout_constraintVertical_bias="0.0"
-                tools:text="Human" />
-
-            <TextView
-                android:id="@+id/details_character_gender"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="@+id/details_character_static_gender"
-                app:layout_constraintStart_toEndOf="@+id/details_character_static_gender"
-                app:layout_constraintTop_toTopOf="@+id/details_character_static_gender"
-                app:layout_constraintVertical_bias="0.0"
-                tools:text="Male" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

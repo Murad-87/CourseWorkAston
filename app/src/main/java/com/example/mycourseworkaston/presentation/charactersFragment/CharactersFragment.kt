@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
@@ -42,12 +43,14 @@ class CharactersFragment :
         initViews()
         showLoading()
 
+
+
         viewModel.characterList.observe(viewLifecycleOwner) {
             characterList = it
             adapter.submitList(it)
-            Log.d("TESTING", "characterList")
         }
         setupRecyclerView()
+
     }
 
     private fun setupRecyclerView() {
@@ -75,19 +78,15 @@ class CharactersFragment :
     }
 
     override fun onItemClick(character: CharacterUiModel) {
-        TODO("Not yet implemented")
+        openDetails(CharacterDetailsFragment.newInstance(character))
     }
 
     private fun showLoading() {
         viewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
-            with(binding) {
-                paginationProgressBarCharacter.isVisible = isLoading
-                characterFragmentSearchImage.isVisible = !isLoading
-
-            }
+               binding.paginationProgressBarCharacter.isVisible = isLoading
         }
     }
-
+    
     private fun openDetails(detailsFragment: CharacterDetailsFragment) {
         (requireActivity() as MainActivity).openFragment(detailsFragment)
     }
@@ -95,5 +94,12 @@ class CharactersFragment :
     companion object {
 
         private const val CHARACTER_DATA = "CHARACTER_DATA"
+
+        fun newInstance(character: CharacterUiModel) =
+            CharactersFragment().apply {
+                arguments = bundleOf(
+                    CHARACTER_DATA to character
+                )
+            }
     }
 }

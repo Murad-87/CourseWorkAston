@@ -39,7 +39,7 @@ class EpisodeRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun getEpisodeItem(itemId: Int): EpisodeInfoDomainModel {
+    override suspend fun getEpisodeListFilter(): List<EpisodeInfoDomainModel> {
         TODO("Not yet implemented")
     }
 }

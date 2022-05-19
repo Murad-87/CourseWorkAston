@@ -39,7 +39,7 @@ class LocationRepositoryImpl @Inject constructor(
         }
     }
 
-    override fun getLocationItem(itemId: Int): LocationInfoDomainModel {
+    override suspend fun getLocationListFilter(): List<LocationInfoDomainModel> {
         TODO("Not yet implemented")
     }
 }

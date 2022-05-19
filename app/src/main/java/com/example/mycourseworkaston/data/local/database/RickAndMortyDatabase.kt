@@ -12,7 +12,7 @@ import com.example.mycourseworkaston.data.local.model.LocationLocalEntity
 
 @Database(
     entities = [CharacterLocalEntity::class, EpisodeLocalEntity::class, LocationLocalEntity::class],
-    version = 5
+    version = 6
 )
 @TypeConverters(Converters::class)
 abstract class RickAndMortyDatabase : RoomDatabase() {

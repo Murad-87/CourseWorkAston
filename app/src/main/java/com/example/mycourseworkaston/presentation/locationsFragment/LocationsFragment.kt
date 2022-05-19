@@ -3,6 +3,7 @@ package com.example.mycourseworkaston.presentation.locationsFragment
 import android.content.Context
 import android.os.Bundle
 import android.view.View
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.viewModels
@@ -10,6 +11,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.mycourseworkaston.RickAndMortyApplication
 import com.example.mycourseworkaston.databinding.FragmentLocationsBinding
 import com.example.mycourseworkaston.di.ViewModelFactory
+import com.example.mycourseworkaston.presentation.MainActivity
+import com.example.mycourseworkaston.presentation.locationDetailsFragment.LocationDetailsFragment
 import com.example.mycourseworkaston.presentation.locationsFragment.locationsAdapter.ItemClickLocation
 import com.example.mycourseworkaston.presentation.locationsFragment.locationsAdapter.LocationsAdapter
 import com.example.mycourseworkaston.presentation.model.LocationUiModel
@@ -78,10 +81,21 @@ class LocationsFragment :
     }
 
     override fun onItemClick(location: LocationUiModel) {
-        TODO("Not yet implemented")
+        openLocationDetails(LocationDetailsFragment.newInstance(location))
+    }
+
+    private fun openLocationDetails(locationDetails: LocationDetailsFragment){
+        (requireActivity() as MainActivity).openFragment(locationDetails)
     }
 
     companion object {
         private const val LOCATION_DATA = "LOCATION_DATA"
+
+        fun newInstance(location: LocationUiModel) =
+            LocationsFragment().apply {
+                arguments = bundleOf(
+                    LOCATION_DATA to location
+                )
+            }
     }
 }

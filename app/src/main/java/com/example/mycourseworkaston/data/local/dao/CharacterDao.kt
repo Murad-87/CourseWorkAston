@@ -13,9 +13,6 @@ interface CharacterDao {
     @Query("SELECT * FROM character_table")
     suspend fun getCharacterList(): List<CharacterLocalEntity>
 
-    @Query("SELECT * FROM character_table WHERE id =:characterId LIMIT 1")
-    fun flowCharacterItem(characterId: Int): Flow<CharacterLocalEntity>
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCharacter(character: CharacterLocalEntity)
 }

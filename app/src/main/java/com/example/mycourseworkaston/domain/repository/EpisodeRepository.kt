@@ -6,6 +6,5 @@ interface EpisodeRepository {
 
     suspend fun getEpisodeList(): List<EpisodeInfoDomainModel>
 
-    suspend fun getEpisodeItem(itemId: Int): EpisodeInfoDomainModel
-
+    suspend fun getEpisodeListFilter(): List<EpisodeInfoDomainModel>
 }

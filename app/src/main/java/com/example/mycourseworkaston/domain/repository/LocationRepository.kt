@@ -6,6 +6,5 @@ interface LocationRepository {
 
     suspend fun getLocationList(): List<LocationInfoDomainModel>
 
-    fun getLocationItem(itemId: Int): LocationInfoDomainModel
-
+    suspend fun getLocationListFilter(): List<LocationInfoDomainModel>
 }
