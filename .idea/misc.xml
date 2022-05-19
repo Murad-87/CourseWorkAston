@@ -12,7 +12,9 @@
         <entry key="..\:/MyCourseWorkAston/app/src/main/res/drawable/ic_splash_screen.xml" value="0.16" />
         <entry key="..\:/MyCourseWorkAston/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/MyCourseWorkAston/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
+        <entry key="..\:/MyCourseWorkAston/app/src/main/res/layout/character_filter_dialog.xml" value="0.25" />
         <entry key="..\:/MyCourseWorkAston/app/src/main/res/layout/character_item.xml" value="0.25" />
+        <entry key="..\:/MyCourseWorkAston/app/src/main/res/layout/episode_filter_dialog.xml" value="0.25" />
         <entry key="..\:/MyCourseWorkAston/app/src/main/res/layout/episode_item.xml" value="0.25" />
         <entry key="..\:/MyCourseWorkAston/app/src/main/res/layout/fragment_character_details.xml" value="0.2" />
         <entry key="..\:/MyCourseWorkAston/app/src/main/res/layout/fragment_characters.xml" value="0.2" />
@@ -20,6 +22,7 @@
         <entry key="..\:/MyCourseWorkAston/app/src/main/res/layout/fragment_episodes.xml" value="0.2" />
         <entry key="..\:/MyCourseWorkAston/app/src/main/res/layout/fragment_location_details.xml" value="0.264" />
         <entry key="..\:/MyCourseWorkAston/app/src/main/res/layout/fragment_locations.xml" value="0.2" />
+        <entry key="..\:/MyCourseWorkAston/app/src/main/res/layout/location_filter_dialog.xml" value="0.25" />
         <entry key="..\:/MyCourseWorkAston/app/src/main/res/layout/location_item.xml" value="0.25" />
         <entry key="..\:/MyCourseWorkAston/app/src/main/res/layout/toolbar_layout.xml" value="0.25" />
         <entry key="..\:/MyCourseWorkAston/app/src/main/res/menu/bottom_menu.xml" value="0.25" />

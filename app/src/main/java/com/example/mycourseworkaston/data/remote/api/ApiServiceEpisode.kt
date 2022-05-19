@@ -18,5 +18,5 @@ interface ApiServiceEpisode {
     suspend fun getEpisodesListFilter(
         @Query("name") name: String = "",
         @Query("episode") episode: String = ""
-    ): Response<EpisodeRemoteList>
+    ): EpisodeRemoteList
 }

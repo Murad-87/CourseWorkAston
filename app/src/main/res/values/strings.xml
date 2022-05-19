@@ -3,4 +3,8 @@
     <string name="details_character_title_text">Character details</string>
     <string name="details_episode_title_text">Episode details</string>
     <string name="details_location_title_text">Location details</string>
+    <string name="dialog_characters_filter">Characters filter</string>
+    <string name="apply">Apply</string>
+    <string name="cancel">Cancel</string>
+    <string name="clear">Clear</string>
 </resources>

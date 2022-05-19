@@ -21,5 +21,5 @@ interface ApiServiceCharacter {
         @Query("species") species: String = "",
         @Query("type") type: String = "",
         @Query("gender") gender: String = ""
-    ): Response<CharacterRemoteList>
+    ): CharacterRemoteList
 }

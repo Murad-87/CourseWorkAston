@@ -19,5 +19,5 @@ interface ApiServiceLocation {
         @Query("name") name: String = "",
         @Query("type") type: String = "",
         @Query("dimension") dimension: String = ""
-    ): Response<LocationsRemoteList>
+    ): LocationsRemoteList
 }

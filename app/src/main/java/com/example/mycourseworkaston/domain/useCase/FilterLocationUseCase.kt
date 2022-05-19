@@ -1,9 +1,10 @@
 package com.example.mycourseworkaston.domain.useCase
 
-import com.example.mycourseworkaston.domain.repository.LocationRepository
+import com.example.mycourseworkaston.domain.repository.CharacterRepository
 import javax.inject.Inject
 
 class FilterLocationUseCase @Inject constructor(
-    private val repository: LocationRepository
+    private val repository: CharacterRepository
 ) {
+
 }

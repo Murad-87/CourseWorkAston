@@ -3,15 +3,19 @@ package com.example.mycourseworkaston.data.repository
 import com.example.mycourseworkaston.data.local.converters.toDomain
 import com.example.mycourseworkaston.data.local.dao.CharacterDao
 import com.example.mycourseworkaston.data.remote.api.ApiServiceCharacter
+import com.example.mycourseworkaston.data.remote.api.ApiServiceLocation
 import com.example.mycourseworkaston.data.repository.mapper.CharacterRemoteToCharacterLocal
+import com.example.mycourseworkaston.data.repository.mapper.LocationRemoteToLocationLocal
 import com.example.mycourseworkaston.domain.model.CharacterInfoDomainModel
+import com.example.mycourseworkaston.domain.model.LocationInfoDomainModel
 import com.example.mycourseworkaston.domain.repository.CharacterRepository
+import com.example.mycourseworkaston.presentation.model.CharacterUiModelFilter
 import javax.inject.Inject
 
 class CharacterRepositoryImpl @Inject constructor(
     private val api: ApiServiceCharacter,
     private val dao: CharacterDao,
-    private val mapperCharacter: CharacterRemoteToCharacterLocal
+    private val mapperCharacter: CharacterRemoteToCharacterLocal,
 ) : CharacterRepository {
 
 
@@ -40,7 +44,20 @@ class CharacterRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun getCharacterListFilter(): List<CharacterInfoDomainModel> {
-        TODO("Not yet implemented")
+    override suspend fun getCharacterListFilter(filter: CharacterUiModelFilter): List<CharacterInfoDomainModel> {
+        val filteredList = api.getCharactersListFilter(
+            name = filter.name,
+            status = filter.status,
+            species = filter.species,
+            type = filter.type,
+            gender = filter.gender
+        )
+        return filteredList.results.map { mapperCharacter.mapCharacter(it) }.map { it.toDomain() }
+    }
+
+    suspend fun getCharacterLocations(name: String, type: String, dimension: String): List<LocationInfoDomainModel> {
+//        val response = locationApi.getLocationListFilter(name, type, dimension)
+//        return response.results.map { mapperLocation.mapLocation(it) }.map { it.toDomain()
+        return listOf()
     }
 }

@@ -13,19 +13,22 @@ import com.example.mycourseworkaston.databinding.FragmentCharacterDetailsBinding
 import com.example.mycourseworkaston.di.ViewModelFactory
 import com.example.mycourseworkaston.presentation.episodesFragment.episodesAdapter.EpisodesAdapter
 import com.example.mycourseworkaston.presentation.episodesFragment.episodesAdapter.ItemClickEpisode
+import com.example.mycourseworkaston.presentation.locationsFragment.locationsAdapter.ItemClickLocation
+import com.example.mycourseworkaston.presentation.locationsFragment.locationsAdapter.LocationsAdapter
 import com.example.mycourseworkaston.presentation.model.CharacterUiModel
 import com.example.mycourseworkaston.presentation.model.EpisodeUiModel
+import com.example.mycourseworkaston.presentation.model.LocationUiModel
 import com.example.mycourseworkaston.utils.BaseFragment
 import javax.inject.Inject
 
 class CharacterDetailsFragment :
     BaseFragment<FragmentCharacterDetailsBinding>(FragmentCharacterDetailsBinding::inflate),
-    ItemClickEpisode {
+    ItemClickLocation {
 
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
     private val viewModel: CharacterDetailsViewModel by viewModels { viewModelFactory }
-    private val adapter: EpisodesAdapter by lazy { EpisodesAdapter(this) }
+    private val adapter: LocationsAdapter by lazy { LocationsAdapter(this) }
 
     override fun onAttach(context: Context) {
         val component = (requireActivity().application as RickAndMortyApplication).component
@@ -38,6 +41,14 @@ class CharacterDetailsFragment :
         initToolbar()
         initViews()
         initRecyclerView()
+//        val character = requireArguments().getParcelable<CharacterUiModel>(DETAILS_DATA)
+//        if (character != null) {
+//            viewModel.getCharacterLocations(character.name, character.type, "")
+//            viewModel.filteredLocations.observe(viewLifecycleOwner) {
+//                adapter.submitList(it)
+//            }
+//        }
+
     }
 
     private fun initViews(){
@@ -63,7 +74,7 @@ class CharacterDetailsFragment :
         }
     }
 
-    override fun onItemClick(episode: EpisodeUiModel) {
+    override fun onItemClick(location: LocationUiModel) {
         TODO("Not yet implemented")
     }
 
